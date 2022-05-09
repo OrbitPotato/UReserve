@@ -6,6 +6,13 @@
             <i class="fas fa-newspaper" aria-hidden="true"> Guidelines</i>           
             </a>
         </li>
+        @if(Auth::user()->user_id === 2)
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('students-request') }}">
+            <i class="fas fa-newspaper" aria-hidden="true">Student's Request</i>           
+            </a>
+        </li>
+        @endif
         <li class="nav-item">
             <a class="nav-link" href="{{ url('about-me') }}">
                 <i class="fa fa-user-circle" aria-hidden="true"> About Me</i>              

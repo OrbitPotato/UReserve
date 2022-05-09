@@ -13,6 +13,7 @@
       
 
       <form method="POST" action="{{ url('/reserve-equipment') }}">
+      {{-- <form method="GET" action="{{ url('/review') }}"> --}}
         @csrf
 
             <input type="hidden" name="user_id" value="{{ Auth::user()->user_id }}" />

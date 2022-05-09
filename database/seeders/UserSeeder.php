@@ -18,11 +18,15 @@ class UserSeeder extends Seeder
     {
         User::create([
             'role_id' => 1,
-            'first_name' => 'first',
-            'last_name' => 'last',
-            'email' => 'test@gmail.com',
-            'password' => Hash::make('test'),
+            'first_name' => 'test first',
+            'last_name' => 'test last',
+            'email' => 'professor@gmail.com',
+            'password' => Hash::make('professor'),
         ]);
+
+        // Professor
+
+        // Staff
 
     }
 }
