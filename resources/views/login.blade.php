@@ -81,12 +81,32 @@
 
 @section('content')
 <section class="login-dark">
-  <form method="post">
+
+  <form action="{{ url('api/login') }}" method="post">
+    @csrf
       <h2 class="visually-hidden">Login Form</h2>
       <div class="illustration"><i class="fa fa-lock" aria-hidden="true"></i></div>
-      <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Username"></div>
+      <div class="mb-3"><input class="form-control" name="email" placeholder="Username"></div>
       <div class="mb-3"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-      <div class="mb-3"><a href="student\home.html"><button class="btn btn-primary d-block w-100" type="submit">Log In</button></a></div>
+      @if(session('errors'))
+      <span style="font-color: 'black' !important;" >{{ session()->get('errors') }}</span>
+      @endif
+      {{-- <div class="mb-3"><a href="student\home.html"><button class="btn btn-primary d-block w-100">Log In</button></a></div> --}}
+      <button class="btn btn-primary d-block w-100" id="login" type="submit">Log In</button>
   </form>
 </section>
+@endsection
+
+@section('js')
+{{-- <script>
+  $(function() {
+    $('#login').on('click', function(e) {
+      $.post('http://localhost:8000/api/login', {
+        username: $('input[name="username"]').val(),
+        password: $('input[name="password"]').val()
+      });
+      e.preventDefault();
+    })
+  })
+</script> --}}
 @endsection

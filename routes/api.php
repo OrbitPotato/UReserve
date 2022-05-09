@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Equipment;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,52 +21,74 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/login', function(Request $request) {
 
-    if(Auth::attempt(['username' => $request->username, 'password'=> $request->password])) {
-        $request->session()->regenerate();
+// // Route::post('/login', function(Request $request) {
 
-        return redirect()->intended('reserve-equipment');
-    }
-});
+// //     if(Auth::attempt([
+// //         'email' => $request->email,
+// //         'password'=> $request->password
+// //     ])) {
+// //         $request->session()->regenerate();
+// //         return redirect()->intended('reserve-equipment');
+// //     }
+// //     return response('Email & Password does not match.');
+// // });
 
-Route::get('/reserve-equipment', function (Request $request) {
 
-    return response('get equipment data');
-});
+// Route::get('/reserve-equipment', function (Request $request) {
 
-Route::put('/reserve-equipment', function (Request $request) {
+//     return response('get equipment data');
+// });
 
-    return response('put equipment data');
-});
+// Route::put('/reserve-equipment', function (Request $request) {
 
-Route::post('/reserve-equipment', function (Request $request) {
+//     return response('put equipment data');
+// });
 
-    return response('post equipment data');
-});
+// Route::post('/reserve-equipment', function (Request $request) {
 
-Route::delete('/reserve-equipment', function (Request $request) {
+//     $equipment = new Equipment;
 
-    return response('delete equipment data');
-});
 
-Route::get('/reserve-rooms', function (Request $request) {
+//     foreach ($request->equipment as $key => $value) {
+//         $equipment->quantity = $value['quantity'];
+//         $equipment->category = $value['category'];
+//         $equipment->item = $value['item'];
+//         $equipment->category = $value['category'];
+//         $equipment->date_from = $request->dateFrom;
+//         $equipment->date_to = $request->dateTo;
+//         $equipment->prof_id = 1;
+//         $equipment->user_id = $request->user_id;
+//         $equipment->save();
+//     }
 
-    return response('get room data');
-});
 
-Route::put('/reserve-rooms', function (Request $request) {
+//     return redirect()->back()->with('success', 'Successfully Reserve');
 
-    return response('put room data');
-});
+// });
 
-Route::post('/reserve-rooms', function (Request $request) {
-    dd($request->equipment);
+// Route::delete('/reserve-equipment', function (Request $request) {
 
-    return response($request);
-});
+//     return response('delete equipment data');
+// });
 
-Route::delete('/reserve-rooms', function (Request $request) {
+// Route::get('/reserve-rooms', function (Request $request) {
 
-    return response('delete room data');
-});
+//     return response('get room data');
+// });
+
+// Route::put('/reserve-rooms', function (Request $request) {
+
+//     return response('put room data');
+// });
+
+// Route::post('/reserve-rooms', function (Request $request) {
+//     dd($request->equipment);
+
+//     return response($request);
+// });
+
+// Route::delete('/reserve-rooms', function (Request $request) {
+
+//     return response('delete room data');
+// });
