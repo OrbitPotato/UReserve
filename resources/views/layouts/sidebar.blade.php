@@ -45,6 +45,33 @@
         </li>
         </ul>
 
-    
+       <!-- @if(Auth::user()->user_id === 3)
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('students-request') }}">
+            <i class="fas fa-newspaper" aria-hidden="true">Requests</i>           
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('students-request') }}">
+            <i class="fas fa-newspaper" aria-hidden="true">Deficiencies</i>           
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('students-request') }}">
+            <i class="fas fa-newspaper" aria-hidden="true">Unreturned</i>           
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('students-request') }}">
+            <i class="fas fa-newspaper" aria-hidden="true">Inventory</i>           
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url('students-request') }}">
+            <i class="fas fa-newspaper" aria-hidden="true">Logout</i>           
+            </a>
+        </li>
+        @endif-->
+
     </div>
 </nav>

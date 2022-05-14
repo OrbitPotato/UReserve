@@ -1,11 +1,14 @@
 @extends('layouts.main')
 
 @section('content')
+<h1>Reserve Room</h1>
 <div class="container">
 
-      @if(session('success'))
-        {{ session()->get('success') }}
-      @endif
+             @if(session('success'))
+                 <div class="alert alert-success" role="alert">
+                     {{ session()->get('success') }}
+                 </div>
+              @endif
 
       <form method="POST" action="{{ url('/reserve-rooms') }}">
         @csrf
@@ -44,9 +47,11 @@
               <label for="professor" class="form-label">Professor</label>
               <select class="form-select" aria-label="Default select example" name="professor">
                 <option selected>Select Professor</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option>Mr. Cybrill Gregorio</option>
+                <option>Ms. Diana Garcia</option>
+                <option>Ms. Michelle Austria</option>
+                <option>Ms. Kate Padama</option>
+                <option>Mr. Rodero Salburo</option>
               </select>
             </div>
 
@@ -54,9 +59,10 @@
             <label for="professor" class="form-label">Room</label>
               <select class="form-select" aria-label="Default select example" name="room">
                 <option selected>Select Room</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option>Suite Room</option>
+                <option>Standard Room</option>
+                <option>D. Hall</option>
+                <option>Front Office</option>
               </select>
             </div>
             <br/>

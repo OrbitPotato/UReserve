@@ -2,9 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Models\Equipment;
+use App\Models\User;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,14 +51,21 @@ Route::middleware(['auth'])->group(function () {
 
         // Fetch Equipment Data from DB via Eloquent ORM
 
-        $data = [
-            'key1' => 'value1',
-            'key2' => 'value2',
-            'key3' => 'value3',
-            'key4' => 'value4',
-        ];
+      //  $data = [
+        //    'key1' => 'value1',
+          //  'key2' => 'value2',
+           // 'key3' => 'value3',
+          //  'key4' => 'value4',
+       // ];
 
-        return view('review', ['data' => $data]);
+      //  $data = DB::select('select * from equipment');
+    //   $data = User::find(1)->get()->toArray();
+      $data = Equipment::where('user_id', Auth::user()->user_id)->get();
+
+    //   dd($data);
+      return view('review', ['data' => $data]);
+
+
     });
 
     Route::post('/reserve-equipment', function (Request $request) {
@@ -128,7 +138,3 @@ Route::middleware(['auth'])->group(function () {
         return view('students_request');
     });
 });
-
-
-
-

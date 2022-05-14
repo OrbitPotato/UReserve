@@ -6,8 +6,8 @@
     top: 0;
   }
    .login-dark {
-    height: 1000px;
-    /*background: #54c574 url(star-sky.jpg);*/
+    height: 800px;
+    width: 450px
     background-size: cover;
     position: relative;
   }
@@ -19,7 +19,7 @@
     padding: 40px;
     border-radius: 4px;
     transform: translate(-50%, -50%);
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     color: #fff;

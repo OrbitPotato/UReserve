@@ -3,6 +3,8 @@
 
 @section('content')
 
+<h1>Reserve Equipment</h1>
+
   <div class="container">
 
       @if(session('success'))
@@ -50,9 +52,11 @@
               <label for="professor" class="form-label">Professor</label>
               <select class="form-select" aria-label="Default select example">
                 <option selected>Select Professor</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option>Mr. Cybrill Gregorio</option>
+                <option>Ms. Diana Garcia</option>
+                <option>Ms. Michelle Austria</option>
+                <option>Ms. Kate Padama</option>
+                <option>Mr. Rodero Salburo</option>
               </select>
             </div>
 
@@ -66,18 +70,18 @@
                 <label for="item" class="form-label">Item</label>
                 <select class="form-select" aria-label="Default select example" name="equipment[0][item]">
                   <option selected>Select Item</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option>Pizzacutter</option>
+                  <option>Highball Glass</option>
+                  <option>Peeler</option>
                 </select>
               </div>
               <div class="form-group col-md-4">
                 <label for="category" class="form-label">Category</label>
                 <select class="form-select" aria-label="Default select example" name="equipment[0][category]">
                   <option selected>Select Category</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
+                  <option>Baking</option>
+                  <option>Bartending</option>
+                  <option>Culinary</option>
                 </select>
               </div>
               </div>
